@@ -23,9 +23,7 @@ export default function SignUp({ navigation }: any) {
   const handleSignUp = () => {
     api
       .post("users", { username: trainerName })
-      .then((response) => {
-        setUser(response.data);
-      })
+      .then((response) => setUser(response.data))
       .catch(() => setError(true));
   };
   return (
@@ -45,7 +43,11 @@ export default function SignUp({ navigation }: any) {
           pokémon!
         </Text>
         <TextInput
-          style={!error ? styles.input : (StyleSheet.compose(styles.input, styles.redBorder))}
+          style={
+            !error
+              ? styles.input
+              : StyleSheet.compose(styles.input, styles.redBorder)
+          }
           value={trainerName}
           placeholder="Nome de treinador"
           onChangeText={(text) => setTrainerName(text)}
@@ -61,7 +63,9 @@ export default function SignUp({ navigation }: any) {
           >
             Criar conta
           </FilledButton>
-          {error && <Text style={styles.warning}>Esse nome de usuário já existe.</Text>}
+          {error && (
+            <Text style={styles.warning}>Nome de usuário já existente</Text>
+          )}
         </View>
         <BorderButton
           buttonStyle={{ width: "75%", borderColor: Colors.purple200 }}
@@ -122,5 +126,5 @@ const styles = StyleSheet.create({
     color: Colors.red,
     fontSize: 13,
     fontFamily: "Inter_300Light",
-  }
+  },
 });
