@@ -12,7 +12,7 @@ export default function OnboardingFirst({navigation}: any) {
       </Text>
       <Text style={styles.text}>
         Existem 890 pokémon diferentes. Pela sua alta quantidade é difícil
-        conhecer todos eles. Explore-os aplicativo de forma fácil e interativa.
+        conhecer todos eles. Explore-os no aplicativo de forma fácil e interativa.
       </Text>
       <TouchableOpacity onPress={() => navigation.navigate("OnboardingSecond")} style={styles.iconContainer}>
         <Feather
