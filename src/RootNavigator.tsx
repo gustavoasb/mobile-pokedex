@@ -11,14 +11,14 @@ import OnboardingSecond from "./pages/Onboarding/OnboardingSecond";
 import SelectLogin from "./pages/SelectLogin";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
-import Feed from "./pages/Feed";
+import Home from "./pages/Home";
 
 export default function RootNavigator() {
   const { user } = useUser();
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       {user ? (
-        <Stack.Screen name="Home" component={Feed} />
+        <Stack.Screen name="Home" component={Home} />
       ) : (
         <>
           <Stack.Screen name="OnboardingFirst" component={OnboardingFirst} />
