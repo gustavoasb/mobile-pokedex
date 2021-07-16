@@ -12,7 +12,7 @@ import { Colors } from "../styles";
 import BorderButton from "../components/BorderButton";
 import FilledButton from "../components/FilledButton";
 
-export default function OnboardingFirst({ navigation }: any) {
+export default function SignUp({ navigation }: any) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <LinearGradient

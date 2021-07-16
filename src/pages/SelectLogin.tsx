@@ -11,7 +11,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Colors } from "../styles";
 import BorderButton from "../components/BorderButton";
 
-export default function OnboardingFirst({ navigation }: any) {
+export default function SelectLogin({ navigation }: any) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <LinearGradient
