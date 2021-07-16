@@ -8,7 +8,8 @@ const Stack = createStackNavigator();
 import { useUser } from "./context/UserContext";
 import OnboardingFirst from "./pages/Onboarding/OnboardingFirst";
 import OnboardingSecond from "./pages/Onboarding/OnboardingSecond";
-import Login from "./pages/SelectLogin";
+import SelectLogin from "./pages/SelectLogin";
+import SignUp from "./pages/SignUp";
 import Feed from "./pages/Feed";
 
 export default function RootNavigator() {
@@ -21,7 +22,8 @@ export default function RootNavigator() {
         <>
           <Stack.Screen name="OnboardingFirst" component={OnboardingFirst} />
           <Stack.Screen name="OnboardingSecond" component={OnboardingSecond} />
-          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Login" component={SelectLogin} />
+          <Stack.Screen name="SignUp" component={SignUp} />
         </>
       )}
     </Stack.Navigator>
