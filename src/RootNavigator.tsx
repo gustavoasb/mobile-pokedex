@@ -1,7 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
-// import Login from "./pages/Login";
 // import Home from "./pages/Home";
 
 const Stack = createStackNavigator();
@@ -9,7 +8,7 @@ const Stack = createStackNavigator();
 import { useUser } from "./context/UserContext";
 import OnboardingFirst from "./pages/Onboarding/OnboardingFirst";
 import OnboardingSecond from "./pages/Onboarding/OnboardingSecond";
-import Login from "./pages/Login";
+import Login from "./pages/SelectLogin";
 import Feed from "./pages/Feed";
 
 export default function RootNavigator() {
