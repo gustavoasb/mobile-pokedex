@@ -10,7 +10,7 @@ import {
 import { Feather } from "@expo/vector-icons";
 import { Colors } from "../../styles";
 
-export default function OnboardingFirst({ navigation }: any) {
+export default function OnboardingSecond({ navigation }: any) {
   return (
     <SafeAreaView style={styles.container}>
       <Image source={require("../../../assets/favorite.png")} style={styles.illustration} />
@@ -19,7 +19,7 @@ export default function OnboardingFirst({ navigation }: any) {
         Todo mundo tem seus preferidos. Faça uma lista com os pokémon que mais chamam sua atenção.
       </Text>
       <TouchableOpacity
-        onPress={() => navigation.navigate("OnboardingFirst")}
+        onPress={() => navigation.navigate("Login")}
         style={styles.iconContainer}
       >
         <Feather
