@@ -1,0 +1,18 @@
+export const Sizing = {
+  x4: 4 as 4,
+  x8: 8 as 8,
+  x16: 16 as 16,
+  x20: 20 as 20,
+  x24: 24 as 24,
+  x32: 32 as 32,
+  x48: 48 as 48,
+  x56: 56 as 56,
+  x96: 96 as 96,
+  x192: 192 as 192,
+  heading3: 20,
+  heading2: 25,
+  heading1: 30,
+  text3: 13,
+  text2: 15,
+  text1: 17,
+};
