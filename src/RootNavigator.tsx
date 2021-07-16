@@ -10,6 +10,7 @@ import OnboardingFirst from "./pages/Onboarding/OnboardingFirst";
 import OnboardingSecond from "./pages/Onboarding/OnboardingSecond";
 import SelectLogin from "./pages/SelectLogin";
 import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
 import Feed from "./pages/Feed";
 
 export default function RootNavigator() {
@@ -24,6 +25,7 @@ export default function RootNavigator() {
           <Stack.Screen name="OnboardingSecond" component={OnboardingSecond} />
           <Stack.Screen name="Login" component={SelectLogin} />
           <Stack.Screen name="SignUp" component={SignUp} />
+          <Stack.Screen name="SignIn" component={SignIn} />
         </>
       )}
     </Stack.Navigator>
