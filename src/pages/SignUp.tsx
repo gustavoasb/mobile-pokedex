@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
   TextInput,
   Image,
   SafeAreaView,
+  View,
   TouchableOpacity,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Colors } from "../styles";
 import BorderButton from "../components/BorderButton";
 import FilledButton from "../components/FilledButton";
+import api from "../services/api";
+import { useUser } from "../context/UserContext";
 
 export default function SignUp({ navigation }: any) {
+  const [trainerName, setTrainerName] = useState<string>("");
+  const [error, setError] = useState<boolean>(false);
+  const { setUser } = useUser();
+
+  const handleSignUp = () => {
+    api
+      .post("users", { username: trainerName })
+      .then((response) => {
+        setUser(response.data);
+      })
+      .catch(() => setError(true));
+  };
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <LinearGradient
@@ -29,14 +44,25 @@ export default function SignUp({ navigation }: any) {
           Torne-se um treinador e dê o primeiro passo para se tornar um mestre
           pokémon!
         </Text>
-        <TextInput style={styles.input} placeholder="Nome de treinador" />
-        <FilledButton
-          onPress={() => navigation.navigate("Home")}
-          buttonStyle={{ backgroundColor: Colors.orange, width: "100%", marginBottom: 64 }}
-          textStyle={{ color: Colors.black }}
-        >
-          Criar conta
-        </FilledButton>
+        <TextInput
+          style={!error ? styles.input : (StyleSheet.compose(styles.input, styles.redBorder))}
+          value={trainerName}
+          placeholder="Nome de treinador"
+          onChangeText={(text) => setTrainerName(text)}
+        />
+        <View style={styles.inputContainer}>
+          <FilledButton
+            onPress={() => handleSignUp()}
+            buttonStyle={{
+              backgroundColor: Colors.orange,
+              width: "100%",
+            }}
+            textStyle={{ color: Colors.black }}
+          >
+            Criar conta
+          </FilledButton>
+          {error && <Text style={styles.warning}>Esse nome de usuário já existe.</Text>}
+        </View>
         <BorderButton
           buttonStyle={{ width: "75%", borderColor: Colors.purple200 }}
           textStyle={{ color: Colors.purple200, fontFamily: "Inter_300Light" }}
@@ -64,6 +90,12 @@ const styles = StyleSheet.create({
     aspectRatio: 1.5,
     marginBottom: 16,
   },
+  inputContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 64,
+    width: "100%",
+  },
   text: {
     fontFamily: "Inter_400Regular",
     fontSize: 15,
@@ -81,4 +113,14 @@ const styles = StyleSheet.create({
     width: "100%",
     borderRadius: 10,
   },
+  redBorder: {
+    borderColor: Colors.red,
+    borderWidth: 1,
+  },
+  warning: {
+    marginTop: 8,
+    color: Colors.red,
+    fontSize: 13,
+    fontFamily: "Inter_300Light",
+  }
 });
