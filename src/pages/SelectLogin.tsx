@@ -31,13 +31,13 @@ export default function SelectLogin({ navigation }: any) {
           sua mão.
         </Text>
         <BorderButton
-          onPress={() => navigation.navigate("SignUp")}
+          onPress={() => navigation.navigate("SignIn")}
           buttonStyle={{ width: "100%", marginBottom: 8 }}
         >
           Já sou um treinador
         </BorderButton>
         <BorderButton
-          onPress={() => navigation.navigate("SignIn")}
+          onPress={() => navigation.navigate("SignUp")}
           buttonStyle={{ borderColor: Colors.orange, width: "100%" }}
           textStyle={{ color: Colors.orange }}
         >
