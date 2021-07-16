@@ -13,13 +13,13 @@ import BorderButton from "../components/BorderButton";
 
 export default function OnboardingFirst({ navigation }: any) {
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{ flex: 1 }}>
       <LinearGradient
         // Background Linear Gradient
         colors={[Colors.purple200, Colors.purple100]}
         style={styles.container}
-        start={{x: 0, y: 0}}
-        end={{x: 1, y: 1}}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
       >
         <Image
           source={require("../../assets/login.png")}
@@ -30,8 +30,19 @@ export default function OnboardingFirst({ navigation }: any) {
           Enciclopédia virtual. As informações de todos os Pokémon na palma da
           sua mão.
         </Text>
-        <BorderButton buttonStyle={{width: "100%", marginBottom: 8}}>Já sou um treinador</BorderButton>
-        <BorderButton buttonStyle={{borderColor: Colors.orange, width: "100%"}} textStyle={{color: Colors.orange}}>Quero virar um treinador</BorderButton>
+        <BorderButton
+          onPress={() => navigation.navigate("SignUp")}
+          buttonStyle={{ width: "100%", marginBottom: 8 }}
+        >
+          Já sou um treinador
+        </BorderButton>
+        <BorderButton
+          onPress={() => navigation.navigate("SignIn")}
+          buttonStyle={{ borderColor: Colors.orange, width: "100%" }}
+          textStyle={{ color: Colors.orange }}
+        >
+          Quero virar um treinador
+        </BorderButton>
       </LinearGradient>
     </SafeAreaView>
   );
