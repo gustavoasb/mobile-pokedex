@@ -8,5 +8,6 @@ export const Colors = {
   green: "#23CE6B",
   purple100: "#440381",
   purple200: "#7E14A4",
-  purple300: "#381F50"
+  purple300: "#381F50",
+  red: "#ED3D3D",
 };
