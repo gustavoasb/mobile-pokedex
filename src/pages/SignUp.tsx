@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: "Inter_400Regular",
     fontSize: 15,
-    marginBottom: 32,
+    marginBottom: 16,
     textAlign: "center",
     color: Colors.black,
   },
